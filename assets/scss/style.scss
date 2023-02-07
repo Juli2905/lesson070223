@@ -200,7 +200,7 @@ body {
             @extend %container;
             flex-direction: column;
             padding: 15px 20px 34px;
-            input[type=text], select{
+            input[type=text], select, input[type=password]{
                 width: 100%;
                 border: 1px solid $gray;
                 border-radius: 5px;
@@ -210,7 +210,7 @@ body {
                 font-size: 10px;
                 margin-bottom: 13px;
             }
-            input[type=text]{
+            input[type=text],input[type=password]{
                 width: 93%;
             }
             select{
@@ -307,5 +307,52 @@ footer{
         font-size: 12px;
     }
 }
-
+.auth{
+    background-color: #f7f7f7;
+    padding: 56px 25px 68px 25px;
+    margin: 0 auto;
+    max-width:500px;
+    max-height:424px;
+    form{
+        width: 90%;
+        padding: 20px;
+        .btn.blue{
+            margin-bottom: 34px;
+            
+        }  
+        a{
+            color: $black;
+            margin-bottom: 13px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+           
+        }
+        
+    }
+   
+}
+.reg{
+    background-color: #f7f7f7;
+    padding: 56px 25px 43px 25px;
+    margin: 0 auto;
+    max-width:450px;
+    max-height:384px;
+    form{
+        width: 90%;
+        padding: 20px;
+        .btn.blue{
+            margin-bottom: 46px;
+            
+        }  
+        a{
+            color: $black;
+            margin-bottom: 13px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        
+    }
+}
 }

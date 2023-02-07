@@ -234,7 +234,7 @@ body form {
   flex-direction: column;
   padding: 15px 20px 34px;
 }
-body form input[type=text], body form select {
+body form input[type=text], body form select, body form input[type=password] {
   width: 100%;
   border: 1px solid #808080;
   border-radius: 5px;
@@ -245,7 +245,7 @@ body form input[type=text], body form select {
   font-size: 10px;
   margin-bottom: 13px;
 }
-body form input[type=text] {
+body form input[type=text], body form input[type=password] {
   width: 93%;
 }
 body form select {
@@ -338,6 +338,48 @@ body footer h3 {
 }
 body footer p {
   font-size: 12px;
+}
+body .auth {
+  background-color: #f7f7f7;
+  padding: 56px 25px 68px 25px;
+  margin: 0 auto;
+  max-width: 500px;
+  max-height: 424px;
+}
+body .auth form {
+  width: 90%;
+  padding: 20px;
+}
+body .auth form .btn.blue {
+  margin-bottom: 34px;
+}
+body .auth form a {
+  color: #000;
+  margin-bottom: 13px;
+}
+body .auth form a:last-child {
+  margin-bottom: 0;
+}
+body .reg {
+  background-color: #f7f7f7;
+  padding: 56px 25px 43px 25px;
+  margin: 0 auto;
+  max-width: 450px;
+  max-height: 384px;
+}
+body .reg form {
+  width: 90%;
+  padding: 20px;
+}
+body .reg form .btn.blue {
+  margin-bottom: 46px;
+}
+body .reg form a {
+  color: #000;
+  margin-bottom: 13px;
+}
+body .reg form a:last-child {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
