@@ -360,6 +360,9 @@ body .auth form a {
 body .auth form a:last-child {
   margin-bottom: 0;
 }
+body .auth form a:hover {
+  color: #0085FF;
+}
 body .reg {
   background-color: #f7f7f7;
   padding: 56px 25px 43px 25px;
@@ -380,6 +383,9 @@ body .reg form a {
 }
 body .reg form a:last-child {
   margin-bottom: 0;
+}
+body .reg form a:hover {
+  color: #0085FF;
 }
 
 /*# sourceMappingURL=style.css.map */

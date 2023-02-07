@@ -326,6 +326,9 @@ footer{
             &:last-child{
                 margin-bottom: 0;
             }
+            &:hover{
+                color: $blue;
+            }
            
         }
         
@@ -350,6 +353,9 @@ footer{
             margin-bottom: 13px;
             &:last-child{
                 margin-bottom: 0;
+            }
+            &:hover{
+                color: $blue;
             }
         }
         
