@@ -1,0 +1,311 @@
+@import 'default';
+
+$black: #000;
+$white: #fff;
+$mainBlack: #202020;
+$pink: #EF5DA8;
+$orange: #FF3D00;
+$blue: #0085FF;
+$gray: #808080;
+$lightGray: #E3E3E3;
+
+
+@mixin font($size) {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $size;
+}
+
+
+@mixin button($color) {
+    color: $color;
+    border: 1px solid $color;
+    @include font(900);
+    font-size: 14px;
+    text-transform: capitalize;
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.4s;
+}
+
+@mixin activeButton($color) {
+    @include button($color);
+    color: $white;
+    background-color: $color;
+    cursor: pointer;
+}
+
+
+@mixin cover($height){
+    padding-top: $height;
+    width: 100%;
+    position: relative;
+    img, .content{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+%container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    &.orange {
+        @include button($orange);
+
+        &:hover {
+            @include activeButton($orange);
+        }
+    }
+
+    &.blue {
+        @include button($blue);
+
+        &:hover {
+            @include activeButton($blue);
+        }
+    }
+    &.white{
+        @include button($white);
+        &:hover{
+            @include activeButton($white);
+            color: $blue;
+        }
+    }
+}
+
+p {
+    @include font(400);
+}
+
+h1,
+h2,
+h3 {
+    @include font(900);
+}
+
+h4 {
+    @include font(700);
+}
+section{
+    margin-bottom: 80px;
+}
+body {
+    padding: 0 16%;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 38px 0;
+
+        .burger-menu {
+            .line {
+                width: 20px;
+                height: 2px;
+                background-color: $black;
+                margin-bottom: 3px;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+        h1 {
+            text-transform: uppercase;
+            transition: 0.5s;
+            &.active {
+                color: $pink;
+            }
+            &:hover{
+                color: $orange;
+                cursor: pointer;
+            }
+        }
+        nav{
+            svg{
+                &:first-child{
+                    margin-right: 20px;
+                }
+                &:hover{
+                    scale: 1.2;
+                }
+            }
+        }
+    }
+    .main{
+        @extend %container;
+        .block{
+            width: 48%;
+            background-color: $blue;
+            border-radius: 8px;
+            .cover{
+                @include cover(80%);
+                img{
+                    border-radius: 8px;
+                }
+                .content{
+                    h2{
+                        margin: 34px 55px;
+                        color: $white;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .cards{
+        @extend %container;
+        .card{
+            width: 200/1100 * 100%; //ширина объекта на макете / ширину внешнего блока * 100%
+            background: #FFFFFF;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            .cover{
+                @include cover(100%);
+                img{
+                    border-radius: 8px 8px 0 0;
+                }
+            }
+            &-content{
+                padding: 10px;
+                .title{
+                    font-size: 16px;
+                }
+                .desc{
+                    font-size: 12px;
+                    margin: 14px 0 8px;
+                }
+                .time{
+                    font-size: 10px;
+                    color: $gray;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+        form{
+            width: calc(312/1100*100%);
+            margin: 0 auto;
+            background: #FFF;
+            border: 1px solid #E3E3E3;
+            border-radius: 8px;
+            @extend %container;
+            flex-direction: column;
+            padding: 15px 20px 34px;
+            input[type=text], select{
+                width: 100%;
+                border: 1px solid $gray;
+                border-radius: 5px;
+                padding: 7px 11px;
+                @include font(400);
+                color: $gray;
+                font-size: 10px;
+                margin-bottom: 13px;
+            }
+            input[type=text]{
+                width: 93%;
+            }
+            select{
+                cursor: pointer;
+                margin-bottom: 28px;
+                option{
+                    color: $mainBlack;
+                    font-size: 12px;
+                    transition: 0.4s;
+                    cursor: pointer;
+                }
+            }
+            h2{
+                margin-bottom: 28px;
+            }
+        }   
+    .profile{
+            @extend %container;
+            align-items: stretch;
+            background-color: $blue;
+            padding: 33px;
+            color: $white;
+            p{
+                font-size: 12px;
+            }
+            .container{
+                @extend %container;
+                align-items: stretch;
+                width: 45%;
+                &:last-child{
+                    flex-direction: column;
+                }
+                .cover{
+                    @include cover(48%);
+                    width: 48%;
+                    img{
+                        border-radius: 8px;
+                    }
+                }
+                .info{
+                    @extend %container;
+                    flex-direction: column;
+                    &-text{
+                        .name{
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+.progress{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    .title{
+        h2{
+            margin-bottom: 20px;
+           }
+    }
+   .project{
+    @extend %container;
+    .container{
+        width: 10%;
+    }
+    svg{
+        margin-bottom: 7px;
+        padding: 0 15px;
+    }    
+    h4{
+        font-size: 14px;
+        text-align: center;
+        color: $black;
+        margin-bottom: 7px;
+    }
+    p{
+        font-size: 10px;
+        text-align: center;
+        color: $gray;
+    }
+
+   }
+}
+footer{
+    @extend %container;
+    background-color: $mainBlack;
+    height: 1100/115*100%;
+    color: $white;
+    padding: 37px 5px;
+    h3{
+        font-size: 16px;
+    }
+    p{
+        font-size: 12px;
+    }
+}
+
+}
