@@ -311,10 +311,13 @@ body .progress .title h2 {
 }
 body .progress .project .container {
   width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 body .progress .project svg {
   margin-bottom: 7px;
-  padding: 0 15px;
 }
 body .progress .project h4 {
   font-size: 14px;
